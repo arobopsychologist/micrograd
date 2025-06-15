@@ -26,4 +26,10 @@ jobs:
         run: uv sync --locked --all-extras --dev
 
       - name: Run tests
-        run: uv run -m pytest
+        run: uv run -m pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=micrograd tests/ | tee pytest-coverage.txt
+
+      - name: Pytest coverage comment
+        uses: MishaKav/pytest-coverage-comment@main
+        with:
+          pytest-coverage-path: ./pytest-coverage.txt
+          junitxml-path: ./pytest.xml
