@@ -3,5 +3,15 @@
         "tests"
     ],
     "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+    "saveAndRun": {
+        "commands": [
+            {
+            "match": ".py",
+            "cmd": "uv run -m pytest",
+            "useShortcut": false,
+            "silent": false,
+            },
+        ],
+    }
 }
