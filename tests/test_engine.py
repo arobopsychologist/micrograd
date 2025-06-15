@@ -67,7 +67,6 @@ def test_value_complex_expression():
     c = Value(10.0)
     expected_value = Value(36.0)
 
-    print(a + b * c)
     assert expected_value == a + b * c
 
 
