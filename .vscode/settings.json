@@ -7,10 +7,16 @@
     "saveAndRun": {
         "commands": [
             {
-            "match": ".py",
-            "cmd": "uv run -m pytest",
-            "useShortcut": false,
-            "silent": false,
+                "match": ".py",
+                "cmd": "uv run black .",
+                "useShortcut": false,
+                "silent": false,
+            },
+            {
+                "match": ".py",
+                "cmd": "uv run -m pytest",
+                "useShortcut": false,
+                "silent": false,
             },
         ],
     }

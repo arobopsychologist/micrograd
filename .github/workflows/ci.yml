@@ -24,6 +24,9 @@ jobs:
 
       - name: Install the project
         run: uv sync --locked --all-extras --dev
+      
+      - name: Lint
+        run: uv run black . --check
 
       - name: Run tests
         run: uv run -m pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=micrograd tests/ | tee pytest-coverage.txt
