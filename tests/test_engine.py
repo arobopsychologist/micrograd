@@ -105,3 +105,21 @@ def test_op():
 )
 def test_tanh(a, expected_value):
     assert a.tanh() == expected_value
+
+
+def test_backpropogation():
+    a = Value(1.0)
+    b = Value(2.0)
+    c = Value(3.0)
+    d = Value(4.0)
+
+    e = a + b
+    f = c * d
+
+    g = e * f
+
+    g.tanh()
+
+    g.backward()
+
+    assert a.grad == 12.0
