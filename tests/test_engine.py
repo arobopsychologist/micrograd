@@ -34,6 +34,22 @@ def test_rmult_int():
     assert 2 * Value(2.0) == Value(4.0)
 
 
+def test_sub():
+    assert Value(4.0) - Value(2.0) == Value(2.0)
+
+
+def test_sub_int():
+    assert Value(4.0) - 2 == Value(2.0)
+
+
+def test_rsub_int():
+    assert 4 - Value(2.0) == Value(2.0)
+
+
+def test_div():
+    assert Value(4.0) / Value(2.0) == Value(2.0)
+
+
 def test_add_associative():
     a = Value(1.0)
     b = Value(2.0)
