@@ -123,3 +123,11 @@ def test_backpropogation():
     g.backward()
 
     assert a.grad == 12.0
+
+
+def test_backpropogation_with_same_value():
+    a = Value(1.0)
+    b = a + a
+    b.backward()
+
+    assert a.grad == 2.0
