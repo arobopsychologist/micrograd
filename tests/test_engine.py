@@ -3,33 +3,35 @@ import pytest
 
 
 def test_eq():
-    a = Value(2.0)
-    b = Value(2.0)
-
-    assert a == b
+    assert Value(2.0) == Value(2.0)
 
 
 def test_neq():
-    a = Value(2.0)
-    b = Value(3.0)
-
-    assert a != b
+    assert Value(2.0) != Value(3.0)
 
 
 def test_add():
-    a = Value(2.0)
-    b = Value(-3.0)
-    expected_sum = Value(-1.0)
+    assert Value(2.0) + Value(-3.0) == Value(-1.0)
 
-    assert expected_sum == a + b
+
+def test_add_int():
+    assert Value(2.0) + 1 == Value(3.0)
+
+
+def test_radd_int():
+    assert 1 + Value(2.0) == Value(3.0)
 
 
 def test_mult():
-    a = Value(2.0)
-    b = Value(-3.0)
-    expected_product = Value(-6.0)
+    assert Value(2.0) * Value(-3.0) == Value(-6.0)
 
-    assert expected_product == a * b
+
+def test_mult_int():
+    assert Value(2.0) * 2 == Value(4.0)
+
+
+def test_rmult_int():
+    assert 2 * Value(2.0) == Value(4.0)
 
 
 def test_add_associative():
